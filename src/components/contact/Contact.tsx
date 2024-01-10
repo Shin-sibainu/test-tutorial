@@ -4,11 +4,10 @@ const Contact = () => {
       <h1>お問い合わせフォーム</h1>
       <h2>ShinCodeへのお仕事の依頼</h2>
       <p>すべてのフィールドは必須項目です。</p>
-
       <form action="">
         <div>
           <label htmlFor="name">お名前</label>
-          <input type="text" id="name" />
+          <input type="text" id="name" placeholder="フルネーム" />
         </div>
         <div>
           <label htmlFor="email">メールアドレス</label>
