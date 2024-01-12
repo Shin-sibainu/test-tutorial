@@ -21,6 +21,15 @@ describe("Contact", () => {
       screen.getByText("すべてのフィールドは必須項目です。");
     expect(paragraphElement).toBeInTheDocument();
 
+    const closeElement = screen.getByTitle("close");
+    expect(closeElement).toBeInTheDocument();
+
+    const imageElement = screen.getByAltText("sample");
+    expect(imageElement).toBeInTheDocument();
+
+    const costomElement = screen.getByTestId("custom-element");
+    expect(costomElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole("textbox", {
       name: "お名前",
     });
@@ -31,6 +40,9 @@ describe("Contact", () => {
 
     const nameElement3 = screen.getByPlaceholderText("フルネーム");
     expect(nameElement3).toBeInTheDocument();
+
+    const nameElement4 = screen.getByDisplayValue("ShinCode");
+    expect(nameElement4).toBeInTheDocument();
 
     const emailElement = screen.getByRole("textbox", {
       name: "メールアドレス",

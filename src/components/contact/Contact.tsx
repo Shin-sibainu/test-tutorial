@@ -4,10 +4,19 @@ const Contact = () => {
       <h1>お問い合わせフォーム</h1>
       <h2>ShinCodeへのお仕事の依頼</h2>
       <p>すべてのフィールドは必須項目です。</p>
+      <span title="close">X</span>
+      <img src="https://via.placeholder.com/150" alt="sample" />
+      <div data-testid="custom-element">Custom HTML Element</div>
       <form action="">
         <div>
           <label htmlFor="name">お名前</label>
-          <input type="text" id="name" placeholder="フルネーム" />
+          <input
+            type="text"
+            id="name"
+            placeholder="フルネーム"
+            value="ShinCode"
+            onChange={() => {}}
+          />
         </div>
         <div>
           <label htmlFor="email">メールアドレス</label>
