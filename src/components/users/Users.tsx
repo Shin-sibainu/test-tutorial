@@ -6,7 +6,7 @@ export const Users = () => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => setUsers(data.map((user: { name: string }) => user.name)))
+      .then((data) => setUsers(data.map((user: any) => user)))
       .catch(() => setError("Error fetching users"));
   }, []);
   return (
@@ -14,8 +14,8 @@ export const Users = () => {
       <h1>Users</h1>
       {error && <p>{error}</p>}
       <ul>
-        {users.map((user) => (
-          <li key={user}>{user}</li>
+        {users.map((user: any) => (
+          <li key={user.id}>{user.name}</li>
         ))}
       </ul>
     </div>

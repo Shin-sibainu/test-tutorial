@@ -1,16 +1,23 @@
-import { http, HttpResponse } from "msw";
+import { rest } from "msw";
 
 export const handlers = [
-  http.get("https://jsonplaceholder.typicode.com/users", () => {
-    return HttpResponse.json(
-      [
-        { name: "Bruce Wayne" },
-        { name: "Clark Kent" },
-        { name: "Princess Diana" },
-      ],
-      {
-        status: 200,
-      }
+  rest.get("https://jsonplaceholder.typicode.com/users", (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json([
+        {
+          id: 1,
+          name: "Leanne Graham",
+        },
+        {
+          id: 2,
+          name: "Ervin Howell",
+        },
+        {
+          id: 3,
+          name: "Clementine Bauch",
+        },
+      ])
     );
   }),
 ];
